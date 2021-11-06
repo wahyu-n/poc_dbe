@@ -117,8 +117,8 @@ SELECT obat.nama,obat.jumlah,id_trans_masuk,id_trans_keluar FROM tracing_obat
 INNER JOIN tracing_obat ON obat.barcode__obat=tracing_obat.barcode__obat;
 
 --4
---Solusi permasalah filter nama obat menurut saya dengan melakukan indexing pada kolom nama obat. Karena query sudah terasa lambat
---saat dieksekusi, dan jumlah data sudah sangat banyak. 
+--Solusi permasalah filter nama obat menurut saya dengan melakukan indexing pada kolom nama obat tabel detail adjustment keluar. 
+--Karena query sudah terasa lambat saat dieksekusi, dan jumlah data sudah sangat banyak. 
 --Kenapa indexing, karena query sql secara default bekerja dengan cara table scan. Yaitu menscan data satu persatu
 --mulai dari record 1 (pertama) sampai ke record trakhir. Jika terdapat 1000 transaksi maka sql akan menscan table 
 --dari record 1 hingga record 1000. Itulah kenapa query sql akan berjalan lambat seiring bertambahnya data. 
